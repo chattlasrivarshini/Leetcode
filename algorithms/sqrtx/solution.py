@@ -1,17 +1,22 @@
+
+
 class Solution(object):
-    def plusOne(self, digits):
-        s = ""
+    def mySqrt(self, x):
+        low = 0
+        high = x
 
-        for i in digits:
-            s += str(i)
+        while low <= high:
+            mid = (low + high) // 2
 
-        num = int(s)
-        nums = num +1
-        arr = list(map(int, str(nums)))
-        return arr
+            if mid * mid == x:
+                return mid
 
+            elif mid * mid < x:
+                low = mid + 1
 
+            else:
+                high = mid - 1
 
-
+        return high        
         
-      
+        

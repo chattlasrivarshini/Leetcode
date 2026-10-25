@@ -1,22 +1,14 @@
 
+        
 
 class Solution(object):
-    def mySqrt(self, x):
-        low = 0
-        high = x
 
-        while low <= high:
-            mid = (low + high) // 2
+    def maxProfit(self, prices):
+        mini = prices[0]
+        profit = 0
 
-            if mid * mid == x:
-                return mid
+        for i in range(1, len(prices)):
+            profit = max(profit, prices[i] - mini)
+            mini = min(mini, prices[i])
 
-            elif mid * mid < x:
-                low = mid + 1
-
-            else:
-                high = mid - 1
-
-        return high        
-        
-        
+        return profit       

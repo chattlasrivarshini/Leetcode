@@ -1,13 +1,6 @@
 class Solution(object):
-    def sortArrayByParity(self, nums):
-        evens=[]
-        odds=[]
-
-        for i in nums:
-            if i%2== 0:
-                evens.append(i)
-            else:
-                odds.append(i)
-        return evens +odds        
-
+    def rotate(self, nums, k):
+        k=k%len(nums)
+        nums[:]=nums[-k:]+nums[:-k]
+        return nums
         

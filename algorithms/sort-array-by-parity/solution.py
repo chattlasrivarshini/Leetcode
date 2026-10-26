@@ -1,12 +1,13 @@
 class Solution(object):
-    def missingNumber(self, nums):
-        n = len(nums)
-        summ = 0 
-        for i in range (n+1):
-            summ = summ +i
+    def sortArrayByParity(self, nums):
+        evens=[]
+        odds=[]
 
-        sum_of_nums = sum(nums)    
-
-        return summ - sum_of_nums
+        for i in nums:
+            if i%2== 0:
+                evens.append(i)
+            else:
+                odds.append(i)
+        return evens +odds        
 
         

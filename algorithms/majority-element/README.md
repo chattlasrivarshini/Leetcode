@@ -10,7 +10,7 @@ https://leetcode.com/problems/majority-element/
 
 ## Solution
 
-Automatically synchronized from LeetCode on October 28, 2026.
+Automatically synchronized from LeetCode on October 29, 2026.
 
 ## Complexity
 

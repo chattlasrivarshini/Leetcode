@@ -1,16 +1,17 @@
 class Solution(object):
-    def search(self, nums, target):
-        left = 0
-        right = len(nums) - 1 
+    def moveZeroes(self, nums):
+        write = 0
+    
+    # Read pointer scans the list
+        for read in range(len(nums)):
+        # If we find a non-zero element, swap it to the front
+            if nums[read] != 0:
+                nums[write], nums[read] = nums[read], nums[write]
+                write += 1
+            
+        return nums
         
-        while left <= right:
-            mid = left + (right - left) // 2 
-            if nums[mid] == target:
-                return mid
-            elif nums[mid] > target:
-                right = mid - 1  
-            else:
-                left = mid +1   
 
-        return -1           
-             
+      
+    
+    

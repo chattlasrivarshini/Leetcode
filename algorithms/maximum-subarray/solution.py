@@ -2,19 +2,13 @@
 
 
 class Solution(object):
-    def isAnagram(self, s, t):
-        if len(s) != len(t):
-            return False
+    def maxSubArray(self, nums):
+        current_sum = nums[0]
+        max_sum = nums[0]
 
-        freq = {}
+        for i in range(1, len(nums)):
+            current_sum = max(nums[i], current_sum + nums[i])
 
-        for ch in s:
-            freq[ch] = freq.get(ch, 0) + 1
+            max_sum = max(max_sum, current_sum)
 
-        for ch in t:
-            if ch not in freq or freq[ch] == 0:
-                return False
-
-            freq[ch] -= 1
-
-        return True
+        return max_sum
